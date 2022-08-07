@@ -12,13 +12,6 @@ curret_expression = "0"
 total_expression = '0'
 
 
-def cl():
-    global text
-    text = text.get()
-    print(text)
-    curret_expression.update()
-
-
 lb2 = Label(root, text=curret_expression, background="#e6e6e6",
             font="Lucida 15 bold", fg="grey", pady=2, padx=10).place(x=280, y=50)
 
@@ -60,7 +53,7 @@ Button(root, text="÷", font="ArialRounded 18 bold",
 
 
 Button(root, text="9", font="Lucida 18 bold",
-       pady=1, padx=23, background="White", relief=GROOVE, border=0, command=cl).place(x=1, y=272)
+       pady=1, padx=23, background="White", relief=GROOVE, border=0).place(x=1, y=272)
 
 Button(root, text="8", font="Lucida 18 bold",
        pady=1, padx=23, background="White", relief=GROOVE, border=0).place(x=80, y=272)
