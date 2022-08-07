@@ -1,6 +1,5 @@
-from calendar import SUNDAY
-from textwrap import fill
 from tkinter import *
+
 
 root = Tk()
 root.geometry("317x475")
@@ -9,42 +8,37 @@ root.iconbitmap("py.ico")
 root.config(bg="#e6e6e6")
 root.minsize(width=317, height=475)
 
-
-# def calculate(event):
-#     global scval
-#     text = event.widget.cget("text")
-#     print(text)
-#     if text == "=":
-#         pass
-#     elif text == "C":
-#         scval.set("")
-#         screen.update()
-#     else:
-#         scval.set(scval.get() + text)
-#         screen.update()
+curret_expression = "0"
+total_expression = '0'
 
 
-scval = StringVar()
-scval.set("")
+def cl():
+    global text
+    text = text.get()
+    print(text)
+    curret_expression.update()
 
-lb = Label(root, width=50, height=2, font="Lucida 20 bold")
-lb.pack(fill=X)
 
-lb1 = Label(root, text="0").place(x=100, y=1)
+lb2 = Label(root, text=curret_expression, background="#e6e6e6",
+            font="Lucida 15 bold", fg="grey", pady=2, padx=10).place(x=280, y=50)
 
-Button(root, text="≡  Standard                ", font="Lucida 18 bold",
-       pady=1, padx=1, background="#e6e6e6", relief=GROOVE, border=0).place(x=0, y=0)
+lb1 = Entry(root, textvariable=total_expression, background="#e6e6e6",
+            font="Lucida 40 bold", border=0).place(x=1, y=80)
 
-Button(root, text="↺", font="ArialRounded 18 bold",
-       pady=1, padx=21, background="#e6e6e6", relief=GROOVE, border=0).place(x=244, y=0)
+l = Button(root, text="≡  Standard                ", font="BahnschriftSemiLightSemiConde 18 bold",
+           pady=1, padx=1, background="#e6e6e6", relief=GROOVE, border=0).place(x=0, y=0)
+
+
+Button(root, text="↺", font="ArialRounded 18 ",
+       pady=3, padx=21, background="#e6e6e6", relief=GROOVE, border=0).place(x=244, y=0)
 
 Button(root, text="%", font="ArialRounded 18 bold",
        pady=1, padx=21, background="light grey", relief=GROOVE, border=0).place(x=0, y=170)
 
-Button(root, text="CE", font="ArialRounded 18 bold",
-       pady=1, padx=13, background="light grey", relief=GROOVE, border=0).place(x=80, y=170)
+Button(root, text="CE", font="ErasLightITC 15 ",
+       pady=7, padx=19, background="light grey", relief=GROOVE, border=0).place(x=80, y=170)
 
-Button(root, text="C", font="ArialRounded 18 bold",
+Button(root, text="C", font="ErasLightITC 18 bold",
        pady=1, padx=21, background="light grey", relief=GROOVE, border=0).place(x=160, y=170)
 
 
@@ -52,8 +46,8 @@ Button(root, text="⩤", font="ArialRounded 18",
        pady=3, padx=20, background="light grey", relief=GROOVE, border=0).place(x=240, y=170)
 
 
-Button(root, text="1/x", font="ArialRounded 18",
-       pady=3, padx=15, background="light grey", relief=GROOVE, border=0).place(x=1, y=221)
+Button(root, text="1/x", font="ErasLightITC  16",
+       pady=6, padx=18, background="light grey", relief=GROOVE, border=0).place(x=1, y=221)
 
 Button(root, text="x²", font="ArialRounded 18",
        pady=3, padx=21, background="#d6d6d6", relief=GROOVE, border=0).place(x=80, y=221)
@@ -66,7 +60,7 @@ Button(root, text="÷", font="ArialRounded 18 bold",
 
 
 Button(root, text="9", font="Lucida 18 bold",
-       pady=1, padx=23, background="White", relief=GROOVE, border=0).place(x=1, y=272)
+       pady=1, padx=23, background="White", relief=GROOVE, border=0, command=cl).place(x=1, y=272)
 
 Button(root, text="8", font="Lucida 18 bold",
        pady=1, padx=23, background="White", relief=GROOVE, border=0).place(x=80, y=272)
