@@ -116,7 +116,7 @@ Button(root, text="x²", font="ArialRounded 18",
        pady=3, padx=21, background="#d6d6d6", relief=GROOVE, border=0, command=lambda: show("**")).place(x=80, y=221)
 
 Button(root, text="√x", font="ArialRounded 18",
-       pady=3, padx=19, background="#d6d6d6", relief=GROOVE, border=0, command=lambda: show("√")).place(x=160, y=221)
+       pady=3, padx=19, background="#d6d6d6", relief=GROOVE, border=0, command=lambda: show("**0.5")).place(x=160, y=221)
 
 Button(root, text="÷", font="ArialRounded 18 bold",
        pady=1, padx=22, background="light grey", relief=GROOVE, border=0, command=lambda: show("/")).place(x=240, y=221)
