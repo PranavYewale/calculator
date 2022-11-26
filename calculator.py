@@ -1,6 +1,6 @@
 from tkinter import *
 import tkinter.messagebox as msg
-from time import strftime
+import time
 
 root = Tk()
 root.geometry("317x475+600+200")
@@ -54,14 +54,9 @@ def none():
 
 def save():
     F = open("History.txt", "a")
-    F.write(f" {time}{eq,resul}\n")
+    F.write(f" {time.asctime(time.localtime())}{eq,resul}\n")
     F.close()
     msg.showinfo("Done", "Saved")
-
-
-def time():
-    t = StringVar()
-    t = strftime("%H:%M:%S %p")
 
 
 f = Frame(root)
@@ -174,3 +169,4 @@ Button(root, text="=", font="Lucida 18",
 
 
 root.mainloop()
+
